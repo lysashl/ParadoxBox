@@ -1,0 +1,12 @@
+# Fichiers compilés Java
+*.class
+
+# Dossier de compilation (si tu en as)
+bin/
+target/
+build/
+
+# Fichiers temporaires
+*.log
+*.tmp
+.DS_Store
