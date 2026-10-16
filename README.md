@@ -1,132 +1,140 @@
-ParadoxBox
+# ParadoxBox
 
-# Description
+ParadoxBox is a JavaFX puzzle game inspired by Sokoban, featuring a recursive game mode inspired by Parabox, where players can manipulate nested worlds.
 
-ParadoxBox est un jeu JavaFX inspiré de Sokoban, enrichi d’un mode récursif
- (inspiré de Parabox) permettant de manipuler des mondes imbriqués.
+The project uses Maven and is organized into several components, including the graphical interface, game logic, persistence, path generation, and automatic puzzle solving.
 
-Le projet est structuré avec Maven et organisé en plusieurs modules :
-interface graphique, logique métier, persistance, génération de chemins et
-résolution automatique.
+## Features
 
-# Objectifs
+### Classic Mode
+- Move the player around the board.
+- Push boxes across the grid.
+- Place all boxes on their target positions.
 
-* Implémenter un jeu Sokoban fonctionnel
-* Ajouter un mode récursif (mondes imbriqués)
-* Concevoir une interface graphique JavaFX
-* Créer des éditeurs de niveaux
-* Mettre en place une architecture Maven propre
-* Faciliter l’installation et l’exécution
+### Recursive Mode (Parabox-inspired)
+- Explore nested worlds.
+- Interact with boxes containing other worlds.
+- Navigate between nested levels.
 
-# Prérequis
+### Level Editors
+- Classic level editor.
+- Recursive level editor.
+- Editing tools: walls, empty spaces, players, boxes, and targets.
 
-* Java *JDK 21*
-* Maven *3.x*
-* Environnement graphique *JavaFX*
+### Additional Features
+- Save and load levels.
+- Automatic puzzle solver.
 
-Vérification :
+## Technologies
 
+- **Language:** Java
+- **GUI Framework:** JavaFX
+- **Build Tool:** Maven
 
+## Requirements
+
+- Java JDK 21
+- Maven 3.x
+- A graphical environment compatible with JavaFX
+
+Verify your installation:
+
+```bash
 java -version
 mvn -version
+```
 
-# Installation
+## Installation
 
-Cloner le projet:
-git clone https://gitlab.sorbonne-paris-nord.fr/12308828/paradoxbox.git 
+Clone the repository:
 
-cd paradoxbox
+```bash
+git clone https://github.com/lysashl/ParadoxBox.git
+cd ParadoxBox
+```
 
-# Lancement du projet
-## Méthode recommandée 
-Télécharger ici :
-https://drive.google.com/file/d/1iNBWc7a3Yv1S2FDXJcRRww5buOv1AVY7/view?usp=drive_link
+## Running the Application
 
-1/ Décompresser le fichier
-2/ Ouvrir le dossier ParadoxBox
-3/ Double-cliquer sur ParadoxBox.exe
+### Option 1: Download the Executable
 
-## Linux / macOS
+A packaged Windows version is available [here](https://drive.google.com/file/d/1iNBWc7a3Yv1S2FDXJcRRww5buOv1AVY7/view?usp=drive_link).
 
+1. Download and extract the archive.
+2. Open the `ParadoxBox` folder.
+3. Double-click `ParadoxBox.exe`.
+
+### Option 2: Using the Provided Scripts
+
+**Windows**
+
+```bat
+run.bat
+```
+
+**Linux / macOS**
+
+```bash
 ./run.sh
+```
 
-## Windows
+### Option 3: Run with Maven
 
-.\run.bat
+Compile the project:
 
-
-## Méthode manuelle
-
+```bash
 mvn clean compile
+```
+
+Run the application:
+
+```bash
 mvn javafx:run
+```
 
-## Lancement via JAR
+### Option 4: Run the JAR
+
+Package the application:
+
+```bash
 mvn clean package
+```
+
+If the generated JAR is configured with the required JavaFX dependencies and entry point, run it with:
+
+```bash
 java -jar target/paradoxbox-1.0-SNAPSHOT.jar
+```
 
-# Structure du projet
+## Project Structure
 
-text
-paradoxbox/
+```text
+ParadoxBox/
 ├── pom.xml
 ├── README.md
 ├── run.sh
 ├── run.bat
-├── src/
-│   └── main/
-│       ├── java/
-│       │   ├── ig/                     # Interface graphique
-│       │   ├── modele/                 # Logique du jeu
-│       │   ├── plateau/                # Éditeurs de niveaux
-│       │   ├── persistance/            # Sauvegarde / chargement
-│       │   └── resolutionautomatique/  # Solver
-│       └── resources/
-│           ├── ressources/             # Resssources (images,sons,niveaux)
-│           ├── plateau/  
-│           └── modele/                 
+└── src/
+    └── main/
+        ├── java/
+        │   ├── ig/                      # Graphical interface
+        │   ├── modele/                  # Game logic
+        │   ├── plateau/                 # Level editors
+        │   ├── persistance/             # Save and load functionality
+        │   └── resolutionautomatique/   # Automatic solver
+        └── resources/
+            ├── ressources/              # Images, sounds, and levels
+            ├── plateau/
+            └── modele/
+```
 
-# Classe principale 
+## Main Class
 
-ig.game
+`ig.game`
 
-# Fonctionnalités
-## Mode classique
+## Build and Deployment
 
-* Déplacement du joueur
-* Poussée de caisses
-* Objectif : placer les caisses sur les cibles
+Maven is used to manage dependencies, compile the project, and run the application. The repository includes scripts for Windows and Linux/macOS.
 
-## Mode récursif (Parabox)
+## Academic Project
 
-* Mondes imbriqués
-* Caisses contenant d’autres mondes
-* Navigation entre niveaux internes
-
-## Éditeurs
-
-* Éditeur classique
-* Éditeur récursif
-* Outils : mur, vide, joueur, caisse, cible
-
-## Autres
-
-* Sauvegarde de niveaux
-* Chargement de niveaux
-* Résolution automatique (solver)
-
-
-
-# Déploiement
-
-Le projet utilise Maven pour :
-
-* gérer les dépendances
-* compiler automatiquement
-* exécuter l’application
-
-Scripts fournis :
-
-* run.sh (Linux / macOS)
-* run.bat (Windows)
-
-
+Developed as part of a university team project at Université Sorbonne Paris Nord.
